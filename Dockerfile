@@ -10,9 +10,11 @@ RUN adduser --disabled-password \
     --uid ${NB_UID} \
     ${NB_USER}
 WORKDIR ${HOME}
-USER ${USER}
+USER root
 
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook torch networkx pandas numpy && \
     R -e "install.packages('BiocManager')" && \
     R -e "BiocManager::install('rcellminer')" 
+
+USER ${USER}
