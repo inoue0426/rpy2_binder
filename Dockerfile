@@ -5,4 +5,4 @@ RUN pip install --no-cache --upgrade pip && \
     R -e "install.packages('BiocManager')" && \
     R -e "BiocManager::install('rcellminer')" 
 
-WORKDIR ../
+# WORKDIR ../
