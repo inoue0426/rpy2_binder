@@ -7,4 +7,3 @@ RUN pip install --no-cache --upgrade pip && \
 
 USER root
 COPY . ${HOME}
-RUN chown -R ${HOME}
