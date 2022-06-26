@@ -6,4 +6,3 @@ RUN pip install --no-cache --upgrade pip && \
     R -e "BiocManager::install('rcellminer')" 
 
 USER root
-COPY . ${HOME}
