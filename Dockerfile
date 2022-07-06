@@ -1,7 +1,7 @@
 FROM rpy2/base-ubuntu:master-20.04
 
-RUN apt-get update && apt-get install -y wget && apt-get -y install sudo && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget && \
+    apt-get autoremove -y && apt-get autoclean -y && rm -rf /var/lib/apt/lists/*
 
 # RUN pip install --no-cache --upgrade pip && \
 #     pip install --no-cache notebook torch networkx pandas numpy && \
@@ -12,11 +12,9 @@ RUN apt-get update && apt-get install -y wget && apt-get -y install sudo && \
 ARG NB_USER
 ARG NB_UID
 ENV USER ${NB_USER}
-ENV HOME /home/${NB_USER}
 
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER}
-WORKDIR ${HOME}
 USER ${USER}
