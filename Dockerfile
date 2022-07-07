@@ -1,7 +1,7 @@
 FROM rpy2/base-ubuntu:master-20.04
 
 RUN pip install --no-cache --upgrade pip && \
-    pip install --no-cache notebook torch networkx pandas numpy && \
+    pip install --no-cache notebook torch networkx pandas numpy requests && \
     R -e "install.packages('BiocManager')" && \
     R -e "BiocManager::install('rcellminer')" 
     
