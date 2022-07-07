@@ -1,4 +1,4 @@
-FROM rpy2/base-ubuntu:master-20.04
+FROM rpy2/base-ubuntu:master-21.10
 
 # RUN apt-get update && apt-get install -y && rm -rf /var/lib/apt/lists/* && \
 #     pip install --no-cache --upgrade pip && \
